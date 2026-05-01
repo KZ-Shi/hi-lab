@@ -1037,6 +1037,104 @@ img {
   color: white;
 }
 
+/* ---- University Logos ---- */
+.nav-uni-logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 8px;
+  padding-left: 16px;
+  border-left: 1px solid var(--border);
+}
+
+.nav-uni-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+
+.nav-uni-logo:hover {
+  opacity: 1;
+}
+
+.nav-uni-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  display: block;
+}
+
+/* BUPT logo is white-on-transparent; wrap in dark pill on light backgrounds */
+.nav-bupt-wrap {
+  background: var(--primary);
+  border-radius: 6px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  transition: background var(--transition);
+}
+
+.nav-bupt-wrap:hover {
+  background: var(--primary-light);
+}
+
+.nav-uni-logo--bupt {
+  filter: brightness(0) invert(1);
+}
+
+.bupt-logo-wrap {
+  background: var(--primary);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  transition: background var(--transition);
+}
+
+.bupt-logo-wrap:hover {
+  background: var(--primary-light);
+}
+
+.uni-logo-img--bupt {
+  filter: brightness(0) invert(1);
+}
+
+.uni-logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-partner-logos {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 24px;
+}
+
+.footer-uni-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity var(--transition);
+  filter: brightness(0) invert(1);
+}
+
+.footer-uni-logo--dark {
+  filter: brightness(0) invert(1);
+}
+
+.footer-uni-logo:hover {
+  opacity: 1;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
   .hero h1 { font-size: 2.8rem; }
@@ -1045,6 +1143,10 @@ img {
 }
 
 @media (max-width: 768px) {
+  .nav-uni-logos {
+    display: none;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
