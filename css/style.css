@@ -79,13 +79,14 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--bg-dark);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
   transition: box-shadow var(--transition);
 }
 
 .navbar.scrolled {
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
 }
 
 .navbar .container {
@@ -101,7 +102,7 @@ img {
   gap: 12px;
   font-weight: 700;
   font-size: 1.1rem;
-  color: white;
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -127,7 +128,7 @@ img {
 .nav-brand .brand-sub {
   font-size: 0.65rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-secondary);
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -144,14 +145,14 @@ img {
   border-radius: 6px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   transition: all var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--primary);
+  background: var(--bg-alt);
 }
 
 .nav-toggle {
@@ -1074,24 +1075,24 @@ img {
   display: block;
 }
 
-/* BUPT logo: white-on-transparent.
-   Navbar is dark → logo is white, no background needed.
-   Partnership banner is white → darken logo to black via filter. */
+/* BUPT logo is white-on-transparent.
+   Both navbar and partnership banner are light/white backgrounds,
+   so darken the logo to match dark text — no background pill needed. */
 .nav-bupt-wrap {
   display: flex;
   align-items: center;
 }
 
-/* Navbar is dark — BUPT white logo is naturally visible; no filter needed */
 .nav-uni-logo--bupt {
-  opacity: 0.85;
+  filter: brightness(0);
+  opacity: 0.75;
+  transition: opacity var(--transition);
 }
 
 .nav-bupt-wrap:hover .nav-uni-logo--bupt {
   opacity: 1;
 }
 
-/* Partnership banner is white — make BUPT logo dark */
 .bupt-logo-wrap {
   display: flex;
   align-items: center;
@@ -1099,7 +1100,8 @@ img {
 
 .uni-logo-img--bupt {
   filter: brightness(0);
-  opacity: 0.8;
+  opacity: 0.75;
+  transition: opacity var(--transition);
 }
 
 .bupt-logo-wrap:hover .uni-logo-img--bupt {
