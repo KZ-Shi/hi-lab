@@ -79,14 +79,13 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: box-shadow var(--transition);
 }
 
 .navbar.scrolled {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
 }
 
 .navbar .container {
@@ -102,7 +101,7 @@ img {
   gap: 12px;
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--primary);
+  color: white;
   text-decoration: none;
 }
 
@@ -128,7 +127,7 @@ img {
 .nav-brand .brand-sub {
   font-size: 0.65rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -145,14 +144,14 @@ img {
   border-radius: 6px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   transition: all var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--primary);
-  background: var(--bg-alt);
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .nav-toggle {
@@ -1075,39 +1074,36 @@ img {
   display: block;
 }
 
-/* BUPT logo is white-on-transparent; wrap in dark pill on light backgrounds */
+/* BUPT logo: white-on-transparent.
+   Navbar is dark → logo is white, no background needed.
+   Partnership banner is white → darken logo to black via filter. */
 .nav-bupt-wrap {
-  background: var(--primary);
-  border-radius: 6px;
-  padding: 4px 8px;
   display: flex;
   align-items: center;
-  transition: background var(--transition);
 }
 
-.nav-bupt-wrap:hover {
-  background: var(--primary-light);
-}
-
+/* Navbar is dark — BUPT white logo is naturally visible; no filter needed */
 .nav-uni-logo--bupt {
-  filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
+.nav-bupt-wrap:hover .nav-uni-logo--bupt {
+  opacity: 1;
+}
+
+/* Partnership banner is white — make BUPT logo dark */
 .bupt-logo-wrap {
-  background: var(--primary);
-  border-radius: var(--radius);
-  padding: 6px 12px;
   display: flex;
   align-items: center;
-  transition: background var(--transition);
-}
-
-.bupt-logo-wrap:hover {
-  background: var(--primary-light);
 }
 
 .uni-logo-img--bupt {
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
+  opacity: 0.8;
+}
+
+.bupt-logo-wrap:hover .uni-logo-img--bupt {
+  opacity: 1;
 }
 
 .uni-logo-img {
