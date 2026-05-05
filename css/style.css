@@ -592,6 +592,57 @@ img {
   gap: 24px;
 }
 
+/* Two-column faculty split (UniSQ / BUPT) */
+.team-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.team-col {
+  padding: 32px;
+}
+
+.team-col:first-child {
+  border-right: 1px solid var(--border);
+}
+
+/* Force single-column cards within each team column */
+.team-col .people-grid {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.team-col-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+}
+
+.team-col-logo {
+  height: 26px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.team-col-logo--bupt {
+  filter: brightness(0);
+  opacity: 0.75;
+}
+
+.team-col-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-secondary);
+}
+
 .person-card {
   display: flex;
   gap: 20px;
@@ -1192,6 +1243,10 @@ img {
   .people-grid { grid-template-columns: 1fr; }
   .person-card { flex-direction: column; text-align: center; }
   .person-avatar { margin: 0 auto; }
+
+  .team-columns { grid-template-columns: 1fr; }
+  .team-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  .team-col { padding: 24px; }
 
   .partnership-banner { flex-direction: column; text-align: center; }
 
